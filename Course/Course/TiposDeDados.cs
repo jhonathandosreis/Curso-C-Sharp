@@ -481,7 +481,7 @@ namespace Course
         }
 
         // Exemplo 24
-        public static void Main(string[] args)
+        public static void Main24(string[] args)
         {
             double xA, xB, xC;
             double yA, yB, yC;
@@ -513,6 +513,48 @@ namespace Course
             {
                 Console.WriteLine("Maior área: Y");
             }
+        }
+
+        // Exemplo 25
+        public static void Main25(string[] args)
+        {
+            Triangulo x, y;
+
+            x = new Triangulo();
+            y = new Triangulo();
+
+            Console.WriteLine("Entre com as medidas do triângulo X:");
+            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine("Entre com as medidas do triângulo X:");
+            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            double areaX = x.Area();
+
+            double areaY = y.Area();
+
+            Console.WriteLine("Área de X = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
+            Console.WriteLine("Área de Y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
+        }
+
+        // Exemplo 25
+        public static void Main(string[] args)
+        {
+            Produto p = new Produto();
+
+            Console.WriteLine("Entre os dados do produto:");
+            Console.Write("Nome: ");
+            p.Nome = Console.ReadLine();
+            Console.Write("Preço?: ");
+            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Quantidade no estoque: ");
+            p.Quantidade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Dados do produto: " + p);
         }
     }
 }
