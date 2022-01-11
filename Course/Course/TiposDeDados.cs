@@ -541,8 +541,8 @@ namespace Course
             Console.WriteLine("Área de Y = " + areaY.ToString("F4", CultureInfo.InvariantCulture));
         }
 
-        // Exemplo 25
-        public static void Main(string[] args)
+        // Exemplo 26
+        public static void Main26(string[] args)
         {
             Produto p = new Produto();
 
@@ -554,7 +554,65 @@ namespace Course
             Console.Write("Quantidade no estoque: ");
             p.Quantidade = int.Parse(Console.ReadLine());
 
+            Console.WriteLine();
             Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número a ser adicionado ao estoque: ");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarPordutos(qte);
+
+            Console.WriteLine();
+            Console.WriteLine("Dados atualizados: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número a ser removido do estoque: ");
+            qte = int.Parse(Console.ReadLine());
+            p.RemoverProdutos(qte);
+
+            Console.WriteLine();
+            Console.WriteLine("Dados atualizados: " + p);
+        }
+
+        // Exemplo 27
+        public static void Main27(string[] args)
+        {
+            Retangulo r = new Retangulo();
+
+            Console.WriteLine("Entre a largura e altura do retângulo:" + r);
+            r.Largura = double.Parse(Console.ReadLine(), CultureInfo.CurrentCulture);
+            r.Altura = double.Parse(Console.ReadLine(), CultureInfo.CurrentCulture);
+
+            Console.WriteLine("AREA = " + r.Area().ToString("F2", CultureInfo.CurrentCulture));
+            Console.WriteLine("PERÍMETRO = " + r.Perimetro().ToString("F2", CultureInfo.CurrentCulture));
+            Console.WriteLine("DIAGONAL = " + r.Diagonal().ToString("F2", CultureInfo.CurrentCulture));
+        }
+
+        // Exemplo 28
+        public static void Main29(string[] args)
+        {
+
+            Console.Write("Entre com o valor do raio: ");
+            double raio = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            double circ = Calculadora.Circuferencia(raio);
+            double volume = Calculadora.Volume(raio);
+
+            Console.WriteLine("Circunferência: " + circ.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("Volume: " + volume.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("Valor de PI: " + Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture));
+        }
+
+        // Exemplo 29
+        public static void Main30(string[] args)
+        {
+            Console.Write("Qual é a cotação do dólar?: ");
+            double conversorMoeda = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.Write("Quantos dólares você vai comprar?: ");
+            double conversor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine("Valor a ser pago em reais = " + conversorMoeda * conversor);
         }
     }
 }

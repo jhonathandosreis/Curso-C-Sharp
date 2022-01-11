@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Course
+namespace CoursePOO
 {
     public class Produto
     {
@@ -14,19 +14,19 @@ namespace Course
             return Preco * Quantidade;
         }
 
-        public void AdicionarPordutos(int quantidade)
+        public void AdicionarPordutos(int Quantidade)
         {
-            Quantidade += quantidade;
+
         }
 
-        public void RemoverProdutos(int quantidade)
+        public void RemoverProdutos(int Quantidade)
         {
-            Quantidade -= quantidade;
+
         }
 
         public override string ToString()
         {
-            return Nome + ", $ " + Preco.ToString("F2", CultureInfo.InvariantCulture) + ", " + Quantidade +  " Unidades, Total: $ " + ValorToalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
+            return Nome + ", $ " + Preco.ToString("F2", CultureInfo.InvariantCulture) + ", " + Quantidade + " Unidades, Total: $ " + ValorToalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
